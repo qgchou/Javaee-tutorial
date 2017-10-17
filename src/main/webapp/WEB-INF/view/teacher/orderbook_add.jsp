@@ -6,7 +6,7 @@
             <!--item-->
             <div class="row">
                 <div class="col-lg-12">
-                    <form method="post" action="${pageContext.request.contextPath}/orderbook.do/add">
+                    <form method="post" action="${pageContext.request.contextPath}/book/add">
                         <div id="panelContainer">
                             <div>
                                 <div class="panel panel-default">

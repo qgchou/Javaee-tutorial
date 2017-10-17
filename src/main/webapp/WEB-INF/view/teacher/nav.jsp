@@ -83,7 +83,7 @@
                         <a href="#"> 成绩录入</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/orderbook.do/orderbook.view"> 教材添加</a>
+                        <a href="${pageContext.request.contextPath}/book/order"> 教材添加</a>
                     </li>
                 </ul>
             </div>
@@ -91,3 +91,4 @@
         </div>
         <!-- /.navbar-static-side -->
     </nav>
+</div>

@@ -27,14 +27,14 @@ import java.util.Map;
  */
 //TODO URL我自己定义全小写
 @Controller
-@RequestMapping("orderbook.do")
+@RequestMapping("book")
 
 public class OrderBookController {
     @Resource(name = "orderBookBizImpl")
     private OrderBookBiz orderBookBiz;
 
     @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
-    @RequestMapping("orderbook.view")
+    @RequestMapping("order")
     public String orderBookView(Model m, HttpSession httpSession) {
         String staffId = (String) httpSession.getAttribute("username");
 
@@ -75,7 +75,7 @@ public class OrderBookController {
         orderBookVo.setStaffId((String) session.getAttribute("username"));
         orderBookVo.setMap(map);
         orderBookBiz.add(orderBookVo);
-        return "redirect:/orderbook.do/orderbook.view";
+        return "redirect:/book/order";
     }
 
     @RequiresRoles(value = {"admin", "teacher"}, logical = Logical.OR)
@@ -90,6 +90,6 @@ public class OrderBookController {
     public String audit(HttpSession session) {
         List<OrderBookReviewVo> orderBookReviewVoList = (List<OrderBookReviewVo>) session.getAttribute("notReviewedBookList");
         orderBookBiz.audit(orderBookReviewVoList);
-        return "redirect:/orderbook.do/orderbook_review.view";
+        return "redirect:/book/orderbook_review.view";
     }
 }

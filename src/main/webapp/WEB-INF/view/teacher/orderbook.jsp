@@ -10,12 +10,12 @@
             <h1 class="page-header">已添加教材</h1>
         </div>
         <div class="row" id="addedBookContainer">
-            <jsp:include page="/orderbook.do/orderbook_added.view"></jsp:include>
+            <jsp:include page="/book/orderbook_added.view"></jsp:include>
         </div>
         <div>
             <h1 class="page-header">添加教材</h1>
         </div>
-        <jsp:include page="/orderbook.do/orderbook_add.view"></jsp:include>
+        <jsp:include page="/book/orderbook_add.view"></jsp:include>
     </div>
 
     <!-- /.container-fluid -->
@@ -160,14 +160,14 @@
             form.changedInfo.secId = btn.form[0].value;
             var alterItemRequest = new XMLHttpRequest();
 
-            alterItemRequest.open("POST", "${pageContext.request.contextPath}/orderbook.do/update", true);
+            alterItemRequest.open("POST", "${pageContext.request.contextPath}/book/update", true);
             alterItemRequest.setRequestHeader("Content-type", "application/json");
             alterItemRequest.send(JSON.stringify(form.changedInfo));
 
             alterItemRequest.onreadystatechange = function () {
                 if (alterItemRequest.readyState == 4 && alterItemRequest.status == 200) {
                     var refreshFormRequest = new XMLHttpRequest();
-                    refreshFormRequest.open("GET", "${pageContext.request.contextPath}/orderbook.do/orderbook_added.view", true);
+                    refreshFormRequest.open("GET", "${pageContext.request.contextPath}/book/orderbook_added.view", true);
                     refreshFormRequest.send();
                     refreshFormRequest.onreadystatechange = function () {
                         if (refreshFormRequest.readyState == 4 && refreshFormRequest.status == 200) {

@@ -116,7 +116,7 @@
                                 <a href="${pageContext.request.contextPath}/student.do/student.view"> 学生管理</a>
                             </li>
                             <li>
-                                <a href="${pageContext.request.contextPath}/orderbook.do/orderbook_review.view/">
+                                <a href="${pageContext.request.contextPath}/book/orderbook_review.view/">
                                     秘书审核</a>
                             </li>
 
@@ -130,3 +130,4 @@
         </div>
         <!-- /.navbar-static-side -->
     </nav>
+</div>
